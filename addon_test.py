@@ -3,8 +3,8 @@ mi.set_variant('cuda_ad_rgb')
 
 import matplotlib.pyplot as plt
 
-scene = mi.load_file('test_scene.xml')
-print(mi.traverse(scene))
+scene = mi.load_file('../test.xml')
+# print(mi.traverse(scene))
 
 img = mi.render(scene, spp=256)
 

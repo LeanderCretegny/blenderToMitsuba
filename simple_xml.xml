@@ -1,0 +1,37 @@
+<scene version="3.6.0">
+    <integrator type="path">
+        <integer name="max_depth" value="5"/>
+    </integrator>
+    <shape type="sphere">
+        <emitter type="area">
+            <rgb name="radiance" value="100 100 100"/>
+        </emitter>
+        <transform name="to_world">
+            <scale value="0.2"/>
+            <translate x="-1" y="2" z="2"/>
+        </transform>
+    </shape>
+    <shape type="cube">
+        <bsdf type="diffuse">
+            <rgb name="reflectance" value="1.0 0.0 0.0"/>
+        </bsdf>
+    </shape>
+    <sensor type="perspective">
+        <float name="fov" value="45"/>
+        <transform name="to_world">
+            <!-- Move and rotate the camera so that looks from (1, 1, 1) to (1, 2, 1)
+                and the direction (0, 0, 1) points "up" in the output image -->
+            <lookat origin="0, 10, 2" target="0, 0, 0" up="0, 0, 1"/>
+        </transform>
+        <!-- film -->
+        <film type="hdrfilm">
+            <string name="pixel_format" value="rgb"/>
+            <integer name="width" value="1920"/>
+            <integer name="height" value="1080"/>
+        </film>
+        <!-- sampler -->
+        <sampler type="independent">
+            <integer name="sample_count" value="64"/>
+        </sampler>
+    </sensor>
+</scene>

@@ -11,7 +11,7 @@ scene = mi.load_dict({
     'light': {'type': 'constant'},
     'fromBlend': {
         'type': 'ply',
-        'filename': 'ply_test.ply',
+        'filename': 'test_scene.ply',
         'flip_normals': False
     }
 })
