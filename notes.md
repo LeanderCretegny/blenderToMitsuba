@@ -31,3 +31,7 @@ Blender scenes rendered with cycles using 64 samples and 5 bounces
 
 - Bug encountered when exporting volume scatter 
 - Bug encountered when mitsuba tried rendering principled 
+
+### How to test correctness of plugin
+- Do we care about getting same renders as done inside of blender? Probably not
+- Naive idea: Generate render in mitsuba using export of  predetermined blender tests scene, then compare result with reference (can be a previously rendered image of said scene). But how to compare the images? Question asked in previous semester project can go look into that. 
