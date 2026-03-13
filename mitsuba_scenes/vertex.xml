@@ -1,0 +1,68 @@
+<scene version="3.8.0">
+    <default name="spp" value="64"/>
+    <default name="resx" value="1920"/>
+    <default name="resy" value="1080"/>
+
+    <!-- Camera and Rendering Parameters -->
+    <integrator type="path" name="elm__0">
+        <integer name="max_depth" value="5"/>
+    </integrator>
+
+    <sensor type="perspective" name="elm__1">
+        <string name="fov_axis" value="x"/>
+        <float name="fov" value="30.310617347710725"/>
+        <float name="principal_point_offset_x" value="0"/>
+        <float name="principal_point_offset_y" value="-0"/>
+        <float name="near_clip" value="0.0099999997764825821"/>
+        <float name="far_clip" value="10000"/>
+
+        <transform name="to_world">
+            <lookat origin="12.949999809265137, 3.1141467094421387, -1.4892525672912598" target="11.986936569213867, 2.8722246885299683, -1.3710032925009727" up="-0.24011875689029694, 0.97029566764831543, 0.029482893645763397"/>
+        </transform>
+
+        <sampler type="independent" name="sampler">
+            <integer name="sample_count" value="$spp"/>
+        </sampler>
+
+        <film type="hdrfilm" name="film">
+            <integer name="width" value="$resx"/>
+            <integer name="height" value="$resy"/>
+        </film>
+    </sensor>
+
+    <!-- Materials -->
+    <bsdf type="twosided" id="mat-Material_001" name="mat-Material_001">
+        <bsdf type="diffuse" name="bsdf">
+            <rgb name="reflectance" value="1 1 1"/>
+        </bsdf>
+    </bsdf>
+
+    <bsdf type="diffuse" id="mat-Material_008" name="mat-Material_008">
+        <rgb name="reflectance" value="1 0 0.29999999999999999"/>
+    </bsdf>
+
+    <!-- Emitters -->
+    <emitter type="point" name="elm__2">
+        <vector name="position" x="4.1963648796081543" y="2.1186254024505615" z="-0.90871655941009521"/>
+        <rgb name="intensity" value="7.9577469825744629 7.9577469825744629 7.9577469825744629"/>
+    </emitter>
+
+    <!-- Shapes -->
+    <shape type="ply" name="elm__4">
+        <string name="filename" value="meshes/Plane.ply"/>
+        <boolean name="face_normals" value="true"/>
+        <ref name="bsdf" id="mat-Material_001"/>
+    </shape>
+
+    <shape type="ply" name="elm__5">
+        <string name="filename" value="meshes/Plane_001.ply"/>
+        <boolean name="face_normals" value="true"/>
+        <ref name="bsdf" id="mat-Material_001"/>
+    </shape>
+
+    <shape type="ply" name="elm__7">
+        <string name="filename" value="meshes/Cube_001.ply"/>
+        <boolean name="face_normals" value="true"/>
+        <ref name="bsdf" id="mat-Material_008"/>
+    </shape>
+</scene>

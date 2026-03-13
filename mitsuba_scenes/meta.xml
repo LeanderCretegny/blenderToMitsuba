@@ -1,0 +1,92 @@
+<scene version="3.8.0">
+    <default name="spp" value="64"/>
+    <default name="resx" value="1920"/>
+    <default name="resy" value="1080"/>
+
+    <!-- Camera and Rendering Parameters -->
+    <integrator type="path" name="elm__0">
+        <integer name="max_depth" value="5"/>
+    </integrator>
+
+    <sensor type="perspective" name="elm__1">
+        <string name="fov_axis" value="x"/>
+        <float name="fov" value="49.045532542921393"/>
+        <float name="principal_point_offset_x" value="0"/>
+        <float name="principal_point_offset_y" value="-0"/>
+        <float name="near_clip" value="0.0099999997764825821"/>
+        <float name="far_clip" value="10000"/>
+
+        <transform name="to_world">
+            <lookat origin="12.949999809265137, 3.1141467094421387, -1.4892525672912598" target="11.952435731887817, 3.0443902015686035, -1.4892527300280278" up="-0.069756507873535156, 0.99756407737731934, -5.2664699268234472e-09"/>
+        </transform>
+
+        <sampler type="independent" name="sampler">
+            <integer name="sample_count" value="$spp"/>
+        </sampler>
+
+        <film type="hdrfilm" name="film">
+            <integer name="width" value="$resx"/>
+            <integer name="height" value="$resy"/>
+        </film>
+    </sensor>
+
+    <!-- Materials -->
+    <bsdf type="twosided" id="mat-Material_001" name="mat-Material_001">
+        <bsdf type="diffuse" name="bsdf">
+            <rgb name="reflectance" value="1 1 1"/>
+        </bsdf>
+    </bsdf>
+
+    <bsdf type="twosided" id="mat-Material_002" name="mat-Material_002">
+        <bsdf type="diffuse" name="bsdf">
+            <rgb name="reflectance" value="0.80028259754180908 0 0.0035902417730540037"/>
+        </bsdf>
+    </bsdf>
+
+    <bsdf type="twosided" id="mat-Material_005" name="mat-Material_005">
+        <bsdf type="diffuse" name="bsdf">
+            <rgb name="reflectance" value="1 1 1"/>
+        </bsdf>
+    </bsdf>
+
+    <!-- Emitters -->
+    <emitter type="point" name="elm__2">
+        <vector name="position" x="1.9354453086853027" y="2.1186254024505615" z="-0.90871655941009521"/>
+        <rgb name="intensity" value="7.9577469825744629 7.9577469825744629 7.9577469825744629"/>
+    </emitter>
+
+    <!-- Shapes -->
+    <shape type="ply" name="elm__4">
+        <string name="filename" value="meshes/Plane.ply"/>
+        <boolean name="face_normals" value="true"/>
+        <ref name="bsdf" id="mat-Material_001"/>
+    </shape>
+
+    <shape type="ply" name="elm__6">
+        <string name="filename" value="meshes/Mball.ply"/>
+        <ref name="bsdf" id="mat-Material_002"/>
+    </shape>
+
+    <shape type="shapegroup" id="mesh-Mball" name="mesh-Mball">
+        <shape type="ply" name="Mball">
+            <string name="filename" value="meshes/Mball.ply"/>
+            <ref name="bsdf" id="mat-Material_002"/>
+        </shape>
+    </shape>
+
+    <shape type="instance" name="elm__8">
+        <ref name="shape" id="mesh-Mball"/>
+
+        <transform name="to_world">
+            <scale value="0.54789996147155762"/>
+            <rotate x="1" angle="-89.999999999999986"/>
+            <translate x="-0.32232815027236938" y="1.675926685333252" z="-1.2352497577667236"/>
+        </transform>
+    </shape>
+
+    <shape type="ply" name="elm__10">
+        <string name="filename" value="meshes/Plane_001.ply"/>
+        <boolean name="face_normals" value="true"/>
+        <ref name="bsdf" id="mat-Material_005"/>
+    </shape>
+</scene>

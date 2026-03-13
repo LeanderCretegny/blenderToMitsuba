@@ -8,7 +8,7 @@ def main(path):
     files = glob.glob(f"{path}/*.xml")
     for f in files:
         f_type = f.split('/')[-1].split(".")[0]
-        if f_type != "mix_same":
+        if f_type != "area_ell":
             continue
         
         scene = mi.load_file(f)
