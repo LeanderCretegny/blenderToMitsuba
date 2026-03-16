@@ -43,10 +43,11 @@ Still need to test export of:
 | Nurbs surface | yes | no | duplicate surface | <img width="200" src="renders/nurbs_blender.png" alt="blender"> | <img width="200" src="renders/nurbs_mitsuba.png" alt="mitsuba"> |
 | Image texture | yes | yes | yes | <img width="200" src="renders/tex_blender.png" alt="blender"> | <img width="200" src="renders/tex_mitsuba.png" alt="mitsuba"> |
 | Vertex color | yes | no | - | <img width="200" src="renders/vertex_blender.png" alt="blender"> | <img width="200" src="renders/vertex_mitsuba.png" alt="mitsuba"> |
+| Environment map | yes | yes | yes | <img width="200" src="renders/environment_blender.png" alt="blender"> | <img width="200" src="renders/environment_mitsuba.png" alt="mitsuba"> |
 
 
 - Bug encountered when exporting volume scatter 
-- Bug encountered when mitsuba tried rendering principled 
+- Bug encountered when mitsuba tried rendering principled scene 
 
 ### How to test correctness of plugin
 - Do we care about getting same renders as done inside of blender? Probably not
