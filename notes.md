@@ -12,8 +12,10 @@ Blender scenes rendered with cycles using 64 samples and 5 bounces
 
 **TODO:**
 
-Still need to test export of:
-- Environment maps
+- Get back and working test suit
+- Redo tests with single max bounce
+- Test with different roughness parameter
+- Create list of difference between blender and mitsuba renders
 
 | shader node | expected to work based on [wiki](https://github.com/mitsuba-renderer/mitsuba-blender/wiki/Exporting-a-Blender-scene) | export to mitsuba works | visually similar | Blender (Cycle) | Mitsuba |
 |-|-|-|-|-|-|
@@ -50,5 +52,12 @@ Still need to test export of:
 - Bug encountered when mitsuba tried rendering principled scene 
 
 ### How to test correctness of plugin
-- Do we care about getting same renders as done inside of blender? Probably not
-- Naive idea: Generate render in mitsuba using export of  predetermined blender tests scene, then compare result with reference (can be a previously rendered image of said scene). But how to compare the images? Question asked in previous semester project can go look into that. 
+- Do we care about getting same renders as done inside of blender? YES
+- Naive idea: Generate render in mitsuba using export of  predetermined blender tests scene, then compare result with reference (can be a previously rendered image of said scene). But how to compare the images? Question asked in previous semester project can go look into that. => **Not that interesting, would like to detect change on the blender side, want to compare blender and mitsuba renders directly with error factor**
+
+### Current state of tests
+
+- All tests run and pass if mitsuba-blender addon is not installed in blender (if it is installed, run_test.py crashes)
+- Total coverage is 49%
+
+<img src="cov_detail.png" alt="coverage detail">
