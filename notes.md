@@ -10,13 +10,6 @@
 ### Export tests 
 Blender scenes rendered with cycles using 64 samples and 5 bounces 
 
-**TODO:**
-
-- Get back and working test suit
-- Redo tests with single max bounce
-- Test with different roughness parameter
-- Create list of difference between blender and mitsuba renders
-
 | shader node | expected to work based on [wiki](https://github.com/mitsuba-renderer/mitsuba-blender/wiki/Exporting-a-Blender-scene) | export to mitsuba works | visually similar | Blender (Cycle) | Mitsuba |
 |-|-|-|-|-|-|
 | Diffuse + point light | yes | yes | yes | <img width="200" src="renders/diffuse_pl_blender.png" alt="blender"> | <img width="200" src="renders/diffuse_pl_mitsuba.png" alt="mitsuba"> |
@@ -59,5 +52,15 @@ Blender scenes rendered with cycles using 64 samples and 5 bounces
 
 - All tests run and pass if mitsuba-blender addon is not installed in blender (if it is installed, run_test.py crashes)
 - Total coverage is 49%
+- Most tests done on the importer, almost no test on the export
+- Uses a z-test to compare between two mitsuba render (a reference and a new image generated from importing and exporting ref in and from blender)
 
 <img src="cov_detail.png" alt="coverage detail">
+
+## TODO
+
+- Get back and working test suit
+- Redo tests with single max bounce
+- Test with different roughness parameter
+- Create list of difference between blender and mitsuba renders
+- Try generating blender renders from file (if possible not from .obj) by script inside tests
