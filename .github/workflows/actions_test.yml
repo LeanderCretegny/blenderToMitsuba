@@ -12,5 +12,5 @@ jobs:
       - name: run setup.sh
         run: |
           echo "test1"
-          ls -a
+          whereis setup.sh
           sh setup.sh
