@@ -1,1 +1,1 @@
-echo "hello actions"
+echo "hello action"
