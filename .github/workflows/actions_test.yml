@@ -9,8 +9,9 @@ jobs:
         working-directory: /blenderToMitsuba
     runs-on: ubuntu-latest
     steps:
-      - name: run setup.sh
+      - name: checkout to code
         uses: actions/checkout@main
+      - name: run setup script
         run: |
           echo "test1"
           whereis setup.sh
