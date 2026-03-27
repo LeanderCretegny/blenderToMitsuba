@@ -6,7 +6,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: /blenderToMitsuba
+        working-directory: .
     runs-on: ubuntu-latest
     steps:
       - name: checkout to code
