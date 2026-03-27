@@ -5,7 +5,7 @@ jobs:
   run_bash_script:
     runs-on: ubuntu-latest
     steps:
-      name: run setup.sh
-      run: |
-        echo "test1"
-        sh setup.sh
+      - name: run setup.sh
+        run: |
+          echo "test1"
+          sh setup.sh
