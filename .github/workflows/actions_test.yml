@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: run setup.sh
+        uses: actions/checkout@main
         run: |
           echo "test1"
           whereis setup.sh
