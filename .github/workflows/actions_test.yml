@@ -3,6 +3,10 @@ run-name: run bash script
 on: [push]
 jobs:
   run_bash_script:
+    defaults:
+      run:
+        shell: bash
+        working-directory: /blenderToMitsuba
     runs-on: ubuntu-latest
     steps:
       - name: run setup.sh
