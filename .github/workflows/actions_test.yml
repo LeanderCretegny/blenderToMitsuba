@@ -8,4 +8,5 @@ jobs:
       - name: run setup.sh
         run: |
           echo "test1"
+          ls -a
           sh setup.sh
