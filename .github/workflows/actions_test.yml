@@ -1,5 +1,5 @@
-name: Run bash script
-run-name: run bash script
+name: blender_scripting
+run-name: intall and run blender
 on: [push]
 jobs:
   run_bash_script:
@@ -11,8 +11,6 @@ jobs:
     steps:
       - name: checkout to code
         uses: actions/checkout@main
-      - name: run setup script
+      - name: run blender setup script
         run: |
-          echo "test1"
-          whereis setup.sh
           sh setup.sh
