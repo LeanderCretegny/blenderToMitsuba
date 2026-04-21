@@ -60,7 +60,16 @@ Blender scenes rendered with cycles using 64 samples and 5 bounces
 ## TODO
 
 - Get back and working test suit
-- Redo tests with single max bounce
+- Redo tests with single max bounce (see remarks section)
 - Test with different roughness parameter
 - Create list of difference between blender and mitsuba renders
-- Try generating blender renders from file (if possible not from .obj) by script inside tests
+- Test l2_error function and assert its correctness
+- Upgrade glass test to function with other shader node + look how to get principled plugin for blender principled bsdf
+
+## Adding test of addon to CI
+
+works
+
+## Remarks/notes
+
+- One bounce in blender scene does not translate well to mitsuba (Single bounce in mitsuba generate black pictures)
