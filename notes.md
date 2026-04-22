@@ -59,16 +59,26 @@ Blender scenes rendered with cycles using 64 samples and 5 bounces
 
 ## TODO
 
-- Get back and working test suit
-- Redo tests with single max bounce (see remarks section)
-- Test with different roughness parameter
-- Create list of difference between blender and mitsuba renders
-- Test l2_error function and assert its correctness
-- Upgrade glass test to function with other shader node + look how to get principled plugin for blender principled bsdf
+- [x] Get back and working test suit
+- [x] Redo tests with single max bounce (see remarks section)
+- [] Test with different roughness parameter
+- [] Create list of difference between blender and mitsuba renders
+- [] Test l2_error function and assert its correctness
+- [] Upgrade glass test to function with other shader node + look how to get principled plugin for blender principled bsdf
 
-## Adding test of addon to CI
+## Quantify difference between two renders
 
-works
+Define $r_1$ and $r_2$ as the two RGB renders we want to compare, a pixel $i$ of render $r_k$ as $p_{i, k}$, $N$ as the total number of pixel in a render and $Y_i$ the random variable representing the difference between pixels $p_{i, 1}$ and $p_{i, 2}$, $Y_i = p_{i, 1} - p_{i, 2}$ 
+
+Different possible error function to describe the difference between renders $r_1$ and $r_2$:
+- Absolute error: $AE(r_1, r_2) = \sum_{n = 1}^N \| Y_n \|_1$
+- Mean absolute error: $MAE(r_1, r_2) = \frac{1}{N} \sum_{n = 1}^N \| Y_n \|_1$
+- Squared error: $SE(r_1, r_2) = \sum_{n = 1}^N \| Y_n \|_2^2$
+- Mean squared error: $MSE(r_1, r_2) = \frac{1}{N} \sum_{n = 1}^N \| Y_n \|_2^2$
+
+I think we are more interested in the average of pixel error rather than sum of all errors. MAE and MSE being average could also be seen as mean $\mu_1$, $\mu_2$ of respectively random variable $X_{i, 1} = \| Y_n \|_1$, $X_{i, 2} = \| Y_n \|_2²$ which can be used to compute a standard deviation.
+
+For visual representation we can also display the image in grayscale based of the values of $X_{i, k}$ to see what part of the renders differs and how much.
 
 ## Remarks/notes
 
