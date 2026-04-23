@@ -1,4 +1,10 @@
 # Project journal and notes
+
+## Next Step of the project
+
+1. Complete tests suit for exporter and fix mae/mse (find error threshold + remove opencv)
+2. Get plugins for blender shader node that was already done + try exporting one of the test scene. If needed create new plugin for unsupported shader node
+
 ## Current state of plugin
 
 - On branch [mitsuba_version_update](https://github.com/mitsuba-renderer/mitsuba-blender/pull/137)
