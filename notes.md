@@ -69,7 +69,7 @@ Blender scenes rendered with cycles using 64 samples and 5 bounces
 - [x] Redo tests with single max bounce (see remarks section)
 - [] Test with different roughness parameter
 - [] Create list of difference between blender and mitsuba renders
-- [] Test l2_error function and assert its correctness
+- [x] Test l2_error function and assert its correctness
 - [] Upgrade glass test to function with other shader node + look how to get principled plugin for blender principled bsdf
 
 ## Quantify difference between two renders
