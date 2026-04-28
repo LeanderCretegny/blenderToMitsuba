@@ -67,10 +67,12 @@ Blender scenes rendered with cycles using 64 samples and 5 bounces
 
 - [x] Get back and working test suit
 - [x] Redo tests with single max bounce (see remarks section)
-- [] Test with different roughness parameter
+- [x] Test with different roughness parameter
 - [] Create list of difference between blender and mitsuba renders
 - [x] Test l2_error function and assert its correctness
-- [] Upgrade glass test to function with other shader node + look how to get principled plugin for blender principled bsdf
+- [x] Upgrade glass test to function with other shader node
+- [x] Compute error for identical images
+- [] look how to get principled plugin for blender principled bsdf
 
 ## Quantify difference between two renders
 
@@ -85,6 +87,12 @@ Different possible error function to describe the difference between renders $r_
 I think we are more interested in the average of pixel error rather than sum of all errors. MAE and MSE being average could also be seen as mean $\mu_1$, $\mu_2$ of respectively random variable $X_{i, 1} = \| Y_n \|_1$, $X_{i, 2} = \| Y_n \|_2²$ which can be used to compute a standard deviation.
 
 For visual representation we can also display the image in grayscale based of the values of $X_{i, k}$ to see what part of the renders differs and how much.
+
+We settled for MSE.
+
+### Error threshold
+
+Using a small script I rendered 100 mitsuba image from the same scene with different seed and computed the difference between every pair of renders and got the mean error, which is 0.00030549866250067045. Hence I will use a threshold of 0.000306 to consider two image identical.
 
 ## Remarks/notes
 
