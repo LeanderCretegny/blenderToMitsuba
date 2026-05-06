@@ -63,17 +63,6 @@ Blender scenes rendered with cycles using 64 samples and 5 bounces
 
 <img src="cov_detail.png" alt="coverage detail">
 
-## TODO
-
-- [x] Get back and working test suit
-- [x] Redo tests with single max bounce (see remarks section)
-- [x] Test with different roughness parameter
-- [] Create list of difference between blender and mitsuba renders
-- [x] Test l2_error function and assert its correctness
-- [x] Upgrade glass test to function with other shader node
-- [x] Compute error for identical images
-- [] look how to get principled plugin for blender principled bsdf
-
 ## Quantify difference between two renders
 
 Define $r_1$ and $r_2$ as the two RGB renders we want to compare, a pixel $i$ of render $r_k$ as $p_{i, k}$, $N$ as the total number of pixel in a render and $Y_i$ the random variable representing the difference between pixels $p_{i, 1}$ and $p_{i, 2}$, $Y_i = p_{i, 1} - p_{i, 2}$ 
@@ -104,18 +93,34 @@ Using a small script I rendered 100 mitsuba image from the same scene with diffe
 Now successfully exported **BUT**
 
 - Error when loading exported file: failed to instantiate sensor plugin of type "perspective": [PerspectiveCamera] Scale factors in the camera-to-world transformation are not allowed!
-- A lot of materials use a node of type 'VALTORGB' which is not yet supported
+- A lot of materials use a node of type 'VALTORGB' which is not yet supported. 
 - Brighcontrast node used which is not supported (an implementation exist on git branch blender_shader_node_textures)
 - Mix node used which is not supported
 - Bsdf_translucent node used which is not supported
 - Curve_rgb node used which is not supported
 - Bsdf_refraction node used which is not supported
-- 
-
-
-
 
 ## Remarks/notes
 
 - One bounce in blender scene does not translate well to mitsuba (Single bounce in mitsuba generate black pictures)
 - Headless blender still require to download blender's binary (bpy python package is not sufficient)
+
+## TODO
+- [x] Get back and working test suit
+- [x] Redo tests with single max bounce (see remarks section)
+- [x] Test with different roughness parameter
+- [] Create list of difference between blender and mitsuba renders
+- [x] Test l2_error function and assert its correctness
+- [x] Upgrade glass test to function with other shader node
+- [x] Compute error for identical images
+- [x] look how to get principled plugin for blender principled bsdf
+- [x] Support for Bright contrast nodes
+- [] Support for bsdf principled nodes
+    - Mitsuba plugin form Sebastien added, but is currently not working
+- [] Support for color ramp (VALTORGB) nodes 
+    - No mitsuba plugin exists for it, require complete implementation
+- [] Support for Mix nodes  
+- [] Support for Bsdf translucent nodes 
+- [x] Support for curve rgb nodes  
+- [] Support for Bsdf refraction nodes
+- [] Bright contrast nodes and curve rgb nodes render differently in mi than bl, need to investigate  
