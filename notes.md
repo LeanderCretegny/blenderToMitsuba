@@ -94,6 +94,28 @@ We settled for MSE.
 
 Using a small script I rendered 100 mitsuba image from the same scene with different seed and computed the difference between every pair of renders and got the mean error, which is 0.00030549866250067045. Hence I will use a threshold of 0.000306 to consider two image identical.
 
+## Exporting scene AI043_005
+
+- Blender mesh chair_001 has invalid normals, can't instantiate mitsuba shape plugin "blender". Recalculate normals inside blender did not fix the issue. For now remove mesh to see what else is not working.
+- Error tuple index out of range in io/exporter/material.py, line 451: Reason was no code to handle degenerate materials not linked.
+- Mesh plants_001 also have invalid normals in mitsuba. For now same solution has above.
+- Mesh plants_002, plants_003, plants_004, plants_005, invalid normals
+
+Now successfully exported **BUT**
+
+- Error when loading exported file: failed to instantiate sensor plugin of type "perspective": [PerspectiveCamera] Scale factors in the camera-to-world transformation are not allowed!
+- A lot of materials use a node of type 'VALTORGB' which is not yet supported
+- Brighcontrast node used which is not supported (an implementation exist on git branch blender_shader_node_textures)
+- Mix node used which is not supported
+- Bsdf_translucent node used which is not supported
+- Curve_rgb node used which is not supported
+- Bsdf_refraction node used which is not supported
+- 
+
+
+
+
 ## Remarks/notes
 
 - One bounce in blender scene does not translate well to mitsuba (Single bounce in mitsuba generate black pictures)
+- Headless blender still require to download blender's binary (bpy python package is not sufficient)
