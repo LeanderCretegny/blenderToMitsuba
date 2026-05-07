@@ -118,9 +118,10 @@ Now successfully exported **BUT**
 - [ ] Support for bsdf principled nodes
     - Mitsuba plugin form Sebastien added, but is currently not working
 - [ ] Support for color ramp (VALTORGB) nodes 
-    - No mitsuba plugin exists for it, require complete implementation
-- [ ] Support for Mix nodes  
-- [ ] Support for Bsdf translucent nodes 
+    - No mitsuba plugin exists for it, require complete implementation.
+- [ ] Support for Mix color nodes
+    - No mitsuba plugin exists for it, require complete implementation.
+- [ ] Support for Bsdf translucent nodes
 - [x] Support for curve rgb nodes  
 - [ ] Support for Bsdf refraction nodes
 - [ ] Bright contrast nodes and curve rgb nodes render differently in mi than bl, need to investigate  
