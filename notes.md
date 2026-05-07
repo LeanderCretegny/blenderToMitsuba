@@ -109,18 +109,18 @@ Now successfully exported **BUT**
 - [x] Get back and working test suit
 - [x] Redo tests with single max bounce (see remarks section)
 - [x] Test with different roughness parameter
-- [] Create list of difference between blender and mitsuba renders
+- [ ] Create list of difference between blender and mitsuba renders
 - [x] Test l2_error function and assert its correctness
 - [x] Upgrade glass test to function with other shader node
 - [x] Compute error for identical images
 - [x] look how to get principled plugin for blender principled bsdf
 - [x] Support for Bright contrast nodes
-- [] Support for bsdf principled nodes
+- [ ] Support for bsdf principled nodes
     - Mitsuba plugin form Sebastien added, but is currently not working
-- [] Support for color ramp (VALTORGB) nodes 
+- [ ] Support for color ramp (VALTORGB) nodes 
     - No mitsuba plugin exists for it, require complete implementation
-- [] Support for Mix nodes  
-- [] Support for Bsdf translucent nodes 
+- [ ] Support for Mix nodes  
+- [ ] Support for Bsdf translucent nodes 
 - [x] Support for curve rgb nodes  
-- [] Support for Bsdf refraction nodes
-- [] Bright contrast nodes and curve rgb nodes render differently in mi than bl, need to investigate  
+- [ ] Support for Bsdf refraction nodes
+- [ ] Bright contrast nodes and curve rgb nodes render differently in mi than bl, need to investigate  
