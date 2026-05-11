@@ -122,6 +122,7 @@ Now successfully exported **BUT**
 - [ ] Support for Mix color nodes
     - No mitsuba plugin exists for it, require complete implementation.
 - [ ] Support for Bsdf translucent nodes
+    - No mitsuba plugin exists for it, require complete implementation. Mitsuba 1 implemented it, can check there for inspiration.
 - [x] Support for curve rgb nodes  
 - [ ] Support for Bsdf refraction nodes
 - [ ] Bright contrast nodes and curve rgb nodes render differently in mi than bl, need to investigate  
