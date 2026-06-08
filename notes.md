@@ -104,6 +104,7 @@ Now successfully exported **BUT**
 
 - One bounce in blender scene does not translate well to mitsuba (Single bounce in mitsuba generate black pictures)
 - Headless blender still require to download blender's binary (bpy python package is not sufficient)
+- lighting seems to be incorrectly translated from blender to mitsuba
 
 ## TODO
 - [x] Get back and working test suit
@@ -119,11 +120,13 @@ Now successfully exported **BUT**
     - Mitsuba plugin form Sebastien added, but is currently not working
 - [ ] Support for color ramp (VALTORGB) nodes 
     - No mitsuba plugin exists for it, require complete implementation.
-- [ ] Support for Mix color nodes
+    - current implementation not working
+- [x] Support for Mix color nodes
     - No mitsuba plugin exists for it, require complete implementation.
-- [ ] Support for Bsdf translucent nodes
+- [x] Support for Bsdf translucent nodes
     - No mitsuba plugin exists for it, require complete implementation. Mitsuba 1 implemented it, can check there for inspiration.
 - [x] Support for curve rgb nodes  
-- [ ] Support for Bsdf refraction nodes
+- [x] Support for Bsdf refraction nodes
     - No mitsuba plugin exists for it, require complete implementation. Seems to be a simplified version of rough dielectric
-- [ ] Bright contrast nodes and curve rgb nodes render differently in mi than bl, need to investigate  
+- [ ] Bright contrast nodes and curve rgb nodes render differently in mi than bl, need to investigate
+- [ ] Look at functions in plugin common.py to check if they might be interesting 
